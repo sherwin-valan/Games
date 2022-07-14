@@ -1,0 +1,17 @@
+import Scenes
+import Igis
+
+class TicTacToe : RenderableEntity, EntityMouseClickHandler {
+    override func setup(canvasSize:Size, canvas:Canvas) {
+        // ... other code is here ...
+        dispatcher.registerEntityMouseClickHandler(handler:self)
+    }
+
+    override func teardown() {
+        dispatcher.unregisterEntityMouseClickHandler(handler:self)
+    }
+    func onEntityMouseClick(globalLocation: Point) {
+        ellipse = globalLocation
+    }
+    
+}
